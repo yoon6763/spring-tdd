@@ -1,8 +1,8 @@
-package org.example.productorderservice;
+package org.example.productorderservice.product;
 
 import org.springframework.util.Assert;
 
-record AddProductRequest(String name, int price, DiscountPolicy discountPolicy) {
+public record AddProductRequest(String name, int price, DiscountPolicy discountPolicy) {
 
     public AddProductRequest {
         Assert.isTrue(price > 0, "상품 가격은 0보다 커야 합니다.");

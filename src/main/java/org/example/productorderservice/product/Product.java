@@ -1,6 +1,10 @@
-package org.example.productorderservice;
+package org.example.productorderservice.product;
 
+import lombok.Getter;
+
+@Getter
 public class Product {
+
     private Long id;
     private final String name;
     private final int price;
@@ -16,7 +20,4 @@ public class Product {
         this.id = id;
     }
 
-    public Long getId() {
-        return id;
-    }
 }
