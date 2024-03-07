@@ -1,6 +1,8 @@
 package org.example.productorderservice.product;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class ProductAdapter implements ProductPort {
@@ -10,6 +12,7 @@ public class ProductAdapter implements ProductPort {
         this.productRepository = productRepository;
     }
 
+    @Transactional
     @Override
     public void save(Product product) {
         productRepository.save(product);
