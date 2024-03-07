@@ -1,7 +1,6 @@
 package org.example.productorderservice;
 
 import io.restassured.RestAssured;
-import org.example.productorderservice.product.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
