@@ -3,9 +3,11 @@ package org.example.productorderservice.payment;
 import org.example.productorderservice.order.Order;
 import org.example.productorderservice.product.DiscountPolicy;
 import org.example.productorderservice.product.Product;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ForkJoinPool;
 
+@Component
 public class PaymentAdapter implements PaymentPort {
 
     private final PaymentGateway paymentGateway;
