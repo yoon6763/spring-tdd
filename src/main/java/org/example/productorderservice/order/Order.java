@@ -20,7 +20,7 @@ public class Order {
 
     @OneToOne
     private Product product;
-    
+
     private int quantity;
 
     public Order(Product product, int quantity) {
@@ -30,4 +30,7 @@ public class Order {
         this.quantity = quantity;
     }
 
+    public int getTotalPrice() {
+        return product.getDiscountPrice() * quantity;
+    }
 }
