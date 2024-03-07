@@ -2,7 +2,9 @@ package org.example.productorderservice.order;
 
 import org.example.productorderservice.product.Product;
 import org.example.productorderservice.product.ProductRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderAdapter implements OrderPort {
 
     private final ProductRepository productRepository;
