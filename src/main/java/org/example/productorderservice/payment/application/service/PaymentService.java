@@ -1,6 +1,8 @@
-package org.example.productorderservice.payment;
+package org.example.productorderservice.payment.application.service;
 
-import org.example.productorderservice.order.Order;
+import org.example.productorderservice.order.domain.Order;
+import org.example.productorderservice.payment.application.port.PaymentPort;
+import org.example.productorderservice.payment.domain.Payment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

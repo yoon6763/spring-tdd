@@ -3,6 +3,7 @@ package org.example.productorderservice.product;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.example.productorderservice.ApiTest;
+import org.example.productorderservice.product.adapter.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

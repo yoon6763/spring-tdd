@@ -1,10 +1,9 @@
 package org.example.productorderservice.payment;
 
-import io.restassured.response.ExtractableResponse;
-import io.restassured.response.Response;
 import org.example.productorderservice.ApiTest;
-import org.example.productorderservice.order.OrderService;
+import org.example.productorderservice.order.application.service.OrderService;
 import org.example.productorderservice.order.OrderSteps;
+import org.example.productorderservice.payment.application.service.PaymentService;
 import org.example.productorderservice.product.ProductSteps;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;

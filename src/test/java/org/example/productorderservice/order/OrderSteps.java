@@ -3,7 +3,7 @@ package org.example.productorderservice.order;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
-import org.example.productorderservice.order.CreateOrderRequest;
+import org.example.productorderservice.order.application.service.CreateOrderRequest;
 import org.springframework.http.MediaType;
 
 public class OrderSteps {

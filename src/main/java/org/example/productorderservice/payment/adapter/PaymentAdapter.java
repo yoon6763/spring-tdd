@@ -1,12 +1,10 @@
-package org.example.productorderservice.payment;
+package org.example.productorderservice.payment.adapter;
 
-import org.example.productorderservice.order.Order;
-import org.example.productorderservice.order.OrderRepository;
-import org.example.productorderservice.product.DiscountPolicy;
-import org.example.productorderservice.product.Product;
+import org.example.productorderservice.order.adapter.OrderRepository;
+import org.example.productorderservice.order.domain.Order;
+import org.example.productorderservice.payment.domain.Payment;
+import org.example.productorderservice.payment.application.port.PaymentPort;
 import org.springframework.stereotype.Component;
-
-import java.util.concurrent.ForkJoinPool;
 
 @Component
 public class PaymentAdapter implements PaymentPort {

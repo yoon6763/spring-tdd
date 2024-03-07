@@ -1,9 +1,9 @@
-package org.example.productorderservice.order;
+package org.example.productorderservice.order.domain;
 
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.example.productorderservice.product.Product;
+import org.example.productorderservice.product.domain.Product;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;

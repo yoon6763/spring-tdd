@@ -1,4 +1,4 @@
-package org.example.productorderservice.payment;
+package org.example.productorderservice.payment.adapter;
 
 import org.springframework.stereotype.Component;
 

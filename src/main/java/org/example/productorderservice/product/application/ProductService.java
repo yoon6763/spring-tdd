@@ -1,6 +1,8 @@
-package org.example.productorderservice.product;
+package org.example.productorderservice.product.application;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.productorderservice.product.application.port.ProductPort;
+import org.example.productorderservice.product.domain.Product;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

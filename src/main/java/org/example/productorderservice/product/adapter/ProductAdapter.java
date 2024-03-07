@@ -1,6 +1,7 @@
-package org.example.productorderservice.product;
+package org.example.productorderservice.product.adapter;
 
-import lombok.extern.slf4j.Slf4j;
+import org.example.productorderservice.product.application.port.ProductPort;
+import org.example.productorderservice.product.domain.Product;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
