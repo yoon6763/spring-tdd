@@ -1,5 +1,6 @@
 package org.example.productorderservice.product;
 
+import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.example.productorderservice.ApiTest;
@@ -10,18 +11,27 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class ProductApiTest extends ApiTest {
 
-    private final ProductSteps productSteps = new ProductSteps();
-
     @Test
     void 상품등록() {
-        final var request = productSteps.상품등록요청_생성();
-        final var response = productSteps.상품등록요청(request);
+        final var request = ProductSteps.상품등록요청_생성();
+        final var response = ProductSteps.상품등록요청(request);
         assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
     }
 
-    public ExtractableResponse<Response> 상품등록요청(AddProductRequest request) {
-        return productSteps.상품등록요청(request);
-    }
+    @Test
+    void 상품조회() {
+        ProductSteps.상품등록요청(ProductSteps.상품등록요청_생성());
+        Long productId = 1L;
 
+        ExtractableResponse<Response> response = RestAssured.given().log().all()
+                .when()
+                .get("/products/" + productId)
+                .then().log().all()
+                .extract();
+
+        assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.jsonPath().getString("name")).isEqualTo("상품명");
+
+    }
 
 }

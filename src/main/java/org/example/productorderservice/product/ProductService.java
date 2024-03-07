@@ -4,10 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Component
 @RequestMapping("/products")
@@ -26,8 +23,15 @@ public class ProductService {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    public GetProductResponse getProduct(final Long productId) {
+    @GetMapping("/{productId}")
+    public ResponseEntity<GetProductResponse> getProduct(@PathVariable final Long productId) {
         final Product product = productPort.getProduct(productId);
-        return new GetProductResponse(product.getId(), product.getName(), product.getPrice(), product.getDiscountPolicy());
+        GetProductResponse getProductResponse = new GetProductResponse(
+                product.getId(),
+                product.getName(),
+                product.getPrice(),
+                product.getDiscountPolicy()
+        );
+        return ResponseEntity.ok(getProductResponse);
     }
 }

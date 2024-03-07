@@ -9,7 +9,7 @@ public class ProductSteps {
 
     }
 
-    public ExtractableResponse<Response> 상품등록요청(AddProductRequest request) {
+    public static ExtractableResponse<Response> 상품등록요청(AddProductRequest request) {
         return RestAssured.given().log().all()
                 .contentType("application/json")
                 .body(request)
